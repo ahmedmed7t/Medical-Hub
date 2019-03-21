@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_background"
+    tools:context="com.example.crazynet.medicalhub.Sign_upActivity">
+
+  <android.support.constraint.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+      <android.support.v7.widget.CardView
+          android:id="@+id/view2"
+          android:layout_width="100dp"
+          android:layout_height="90dp"
+          android:background="@color/screen_background"
+          android:shape="ring"
+          app:cardCornerRadius="3dp"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintRight_toRightOf="parent"
+          app:layout_constraintLeft_toLeftOf="parent"
+          android:layout_marginTop="30dp">
+
+    <ImageView
+        android:id="@+id/signUP_Image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ic_camera"
+        android:scaleType="center"
+        android:background="@color/screen_background"
+        />
+
+      </android.support.v7.widget.CardView>
+
+    <ImageView
+        android:id="@+id/userName_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_user_name"
+        android:layout_marginStart="@dimen/margin_start_end"
+        android:layout_marginTop="35dp"
+        app:layout_constraintTop_toBottomOf="@id/view2"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/signUp_userName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_start_end"
+        android:layout_marginStart="@dimen/margin_start_end"
+        android:layout_marginTop="21dp"
+        app:layout_constraintStart_toEndOf="@id/userName_image"
+        app:layout_constraintTop_toBottomOf="@id/view2">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/signUp_edit_userName"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/editTextColor"
+            android:hint="@string/Username"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/userMail_image"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_gmail_logo"
+        android:layout_marginTop="40dp"
+        app:layout_constraintTop_toBottomOf="@id/userName_image"
+        app:layout_constraintStart_toStartOf="@id/userName_image"
+        app:layout_constraintEnd_toEndOf="@id/userName_image"
+        />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/signUp_Mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_start_end"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@id/userMail_image"
+        app:layout_constraintTop_toBottomOf="@id/signUp_userName">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/signUp_edit_Mail"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/editTextColor"
+            android:hint="@string/mail"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/userPassword_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_password"
+        android:layout_marginTop="42dp"
+        app:layout_constraintTop_toBottomOf="@id/userMail_image"
+        app:layout_constraintStart_toStartOf="@id/userName_image"
+        app:layout_constraintEnd_toEndOf="@id/userName_image"
+        />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/signUp_Password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_start_end"
+        android:layout_marginStart="@dimen/margin_start_end"
+        android:layout_marginTop="23dp"
+        app:layout_constraintStart_toEndOf="@id/userName_image"
+        app:layout_constraintTop_toBottomOf="@id/signUp_Mail">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/signUp_edit_Password"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/editTextColor"
+            android:inputType="textPassword"
+            android:hint="@string/Password"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/userAge_image"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:src="@drawable/ic_age"
+        android:layout_marginTop="42dp"
+        app:layout_constraintTop_toBottomOf="@id/userPassword_image"
+        app:layout_constraintStart_toStartOf="@id/userName_image"
+        app:layout_constraintEnd_toEndOf="@id/userName_image"
+        />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/signUp_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_start_end"
+        android:layout_marginStart="@dimen/margin_start_end"
+        android:layout_marginTop="23dp"
+        app:layout_constraintStart_toEndOf="@id/userAge_image"
+        app:layout_constraintTop_toBottomOf="@id/signUp_Password">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/signUp_edit_age"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/editTextColor"
+            android:inputType="number"
+            android:maxLength="3"
+            android:hint="@string/age"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/userAge_ID"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:src="@drawable/ic_id_card"
+        android:layout_marginTop="42dp"
+        app:layout_constraintTop_toBottomOf="@id/userAge_image"
+        app:layout_constraintStart_toStartOf="@id/userName_image"
+        app:layout_constraintEnd_toEndOf="@id/userName_image"
+        />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/signUp_ID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_start_end"
+        android:layout_marginStart="@dimen/margin_start_end"
+        android:layout_marginTop="23dp"
+        app:layout_constraintStart_toEndOf="@id/userAge_image"
+        app:layout_constraintTop_toBottomOf="@id/signUp_age">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/signUp_edit_ID"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/editTextColor"
+            android:hint="@string/id"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+
+      <LinearLayout
+          android:id="@+id/signUp_gender_linear"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:layout_marginTop="18dp"
+          app:layout_constraintTop_toBottomOf="@id/signUp_ID">
+
+          <ImageView
+              android:layout_width="0dp"
+              android:layout_weight="1"
+              android:layout_height="30dp"
+              android:src="@drawable/ic_feminism"
+              android:layout_marginTop="15dp"
+              android:layout_marginStart="22dp"
+              />
+
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="3"
+              android:layout_height="wrap_content"
+              android:text="@string/gender"
+              android:layout_marginTop="7dp"
+              android:layout_marginStart="22dp"
+              android:textSize="20sp"
+              android:textColor="@color/black"
+              android:gravity="start"
+              android:layout_gravity="center"/>
+
+          <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="0dp"
+              android:layout_weight="6"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:gravity="start"
+              android:orientation="horizontal">
+
+          <RadioButton
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/male"
+              android:textSize="16sp"
+              android:layout_marginTop="8dp"
+              android:layout_marginEnd="10dp"
+              android:layout_gravity="center"/>
+
+          <RadioButton
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/female"
+              android:textSize="16sp"
+              android:layout_marginTop="7dp"
+              android:layout_gravity="center"/>
+          </RadioGroup>
+
+      </LinearLayout>
+
+      <android.support.v7.widget.CardView
+          android:id="@+id/signUp_card"
+          android:layout_width="@dimen/button_width"
+          android:layout_height="@dimen/button_hight"
+          app:cardCornerRadius="3dp"
+          android:layout_marginTop="30dp"
+          android:elevation="@dimen/elevation_corner"
+          app:layout_constraintTop_toBottomOf="@id/signUp_gender_linear"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent">
+
+      <Button
+          android:id="@+id/create_new_account"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:text="@string/createAccount"
+          android:textColor="@color/white"
+          android:background="@color/button_background"
+         />
+
+      </android.support.v7.widget.CardView>
+
+  </android.support.constraint.ConstraintLayout>
+
+</ScrollView>
