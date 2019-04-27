@@ -93,6 +93,7 @@
        app:layout_constraintLeft_toLeftOf="parent">
 
        <Button
+           android:id="@+id/button_login"
            android:layout_width="match_parent"
            android:layout_height="match_parent"
            android:text="@string/Login"

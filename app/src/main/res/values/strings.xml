@@ -11,4 +11,27 @@
     <string name="female">Female</string>
     <string name="age">Age</string>
     <string name="id">ID</string>
+    <string name="communities">Communities</string>
+    <string name="daily_tips">Daily Tips</string>
+    <string name="Doctor">Doctor</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="title_activity_home">HomeActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="profile">Profile</string>
+    <string name="history">History</string>
+    <string name="reminder">Reminder</string>
+    <string name="title_activity_ask_discuss">AskDiscussActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="ask">Ask</string>
+    <string name="discuss">Discuss</string>
+    <string name="searchfordoctor">Search For Doctor</string>
+    <string name="write_post">Write a Post</string>
 </resources>

@@ -7,10 +7,13 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -18,6 +21,7 @@ import java.io.InputStream;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnCheckedChanged;
 import butterknife.OnClick;
 import de.hdodenhof.circleimageview.CircleImageView;
 import okhttp3.MediaType;
@@ -30,6 +34,18 @@ public class Sign_upActivity extends AppCompatActivity {
 
     @BindView(R.id.signUP_Image)
     ImageView userImage ;
+
+    @BindView(R.id.radio_isDoctor)
+    RadioButton isDoctor;
+
+    @BindView(R.id.radio_notDoctor)
+    RadioButton notDoctor;
+
+    @BindView(R.id.signUp_doctor_ID)
+    TextInputLayout container_doctor_id;
+
+    @BindView(R.id.userAge_doctor_ID)
+    ImageView icon_doctorID;
 
     private String realImgPath;
     private MultipartBody.Part file;
@@ -49,6 +65,22 @@ public class Sign_upActivity extends AppCompatActivity {
 
     }
 
+
+    @OnCheckedChanged(R.id.radio_isDoctor)
+    public void getDoctorID(){
+        if(isDoctor.isChecked()){
+            container_doctor_id.setVisibility(View.VISIBLE);
+            icon_doctorID.setVisibility(View.VISIBLE);
+        }
+    }
+
+    @OnCheckedChanged(R.id.radio_notDoctor)
+    public void goneDoctorID(){
+        if(notDoctor.isChecked()){
+            container_doctor_id.setVisibility(View.GONE);
+            icon_doctorID.setVisibility(View.GONE);
+        }
+    }
 
 
     @OnClick(R.id.signUP_Image)

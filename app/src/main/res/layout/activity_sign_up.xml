@@ -244,6 +244,101 @@
 
       </LinearLayout>
 
+      <LinearLayout
+          android:id="@+id/signUp_ifDoctor_linear"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:layout_marginTop="18dp"
+          app:layout_constraintTop_toBottomOf="@id/signUp_gender_linear">
+
+          <ImageView
+              android:layout_width="0dp"
+              android:layout_weight="1"
+              android:layout_height="30dp"
+              android:src="@mipmap/doctor"
+              android:layout_marginTop="15dp"
+              android:layout_marginStart="22dp"
+              />
+
+          <TextView
+              android:layout_width="0dp"
+              android:layout_weight="3"
+              android:layout_height="wrap_content"
+              android:text="@string/Doctor"
+              android:layout_marginTop="7dp"
+              android:layout_marginStart="22dp"
+              android:textSize="20sp"
+              android:textColor="@color/black"
+              android:gravity="start"
+              android:layout_gravity="center"/>
+
+          <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/radioGroup_doctor"
+              android:layout_width="0dp"
+              android:layout_weight="6"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:gravity="start"
+              android:orientation="horizontal">
+
+              <RadioButton
+                  android:id="@+id/radio_isDoctor"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/yes"
+                  android:textSize="16sp"
+                  android:layout_marginTop="8dp"
+                  android:layout_marginEnd="10dp"
+                  android:layout_gravity="center"/>
+
+              <RadioButton
+                  android:id="@+id/radio_notDoctor"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="@string/no"
+                  android:textSize="16sp"
+                  android:checked="true"
+                  android:layout_marginTop="7dp"
+                  android:layout_gravity="center"/>
+          </RadioGroup>
+
+      </LinearLayout>
+
+      <ImageView
+          android:id="@+id/userAge_doctor_ID"
+          android:layout_width="38dp"
+          android:layout_height="38dp"
+          android:src="@drawable/ic_id_card"
+          android:layout_marginTop="35dp"
+          android:layout_marginStart="20dp"
+          android:visibility="gone"
+          app:layout_constraintTop_toBottomOf="@id/signUp_ifDoctor_linear"
+          app:layout_constraintStart_toStartOf="@id/userName_image"
+          app:layout_constraintEnd_toEndOf="@id/userName_image"
+          />
+
+      <android.support.design.widget.TextInputLayout
+          android:id="@+id/signUp_doctor_ID"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="@dimen/margin_start_end"
+          android:layout_marginStart="@dimen/margin_start_end"
+          android:layout_marginTop="18dp"
+          android:visibility="gone"
+          app:layout_constraintStart_toEndOf="@id/userAge_doctor_ID"
+          app:layout_constraintTop_toBottomOf="@id/signUp_ifDoctor_linear">
+
+          <android.support.design.widget.TextInputEditText
+              android:id="@+id/signUp_edit_doctor_ID"
+              android:layout_width="260dp"
+              android:layout_height="wrap_content"
+              android:textColor="@color/editTextColor"
+              android:hint="@string/id"/>
+
+      </android.support.design.widget.TextInputLayout>
+
+
       <android.support.v7.widget.CardView
           android:id="@+id/signUp_card"
           android:layout_width="@dimen/button_width"
@@ -251,7 +346,7 @@
           app:cardCornerRadius="3dp"
           android:layout_marginTop="30dp"
           android:elevation="@dimen/elevation_corner"
-          app:layout_constraintTop_toBottomOf="@id/signUp_gender_linear"
+          app:layout_constraintTop_toBottomOf="@id/signUp_doctor_ID"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintEnd_toEndOf="parent">
 
