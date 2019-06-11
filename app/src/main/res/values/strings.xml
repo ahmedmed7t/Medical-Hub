@@ -34,4 +34,18 @@
     <string name="discuss">Discuss</string>
     <string name="searchfordoctor">Search For Doctor</string>
     <string name="write_post">Write a Post</string>
+    <string name="post_Doctor">( Doctor )</string>
+    <string name="post_date">17/7/2017</string>
+    <string name="like">Like</string>
+    <string name="Comment">Comment</string>
+    <string name="writeComment">Write a Comment</string>
+    <string name="place">Place</string>
+    <string name="title_activity_home2">home2Activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="title_activity_doctors">doctorsActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

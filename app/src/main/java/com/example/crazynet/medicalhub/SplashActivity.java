@@ -12,7 +12,6 @@ public class SplashActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        getSupportActionBar().setTitle(Html.fromHtml("<font color='#000'>Medical Hub</font>"));
 
         new Handler().postDelayed(new Runnable() {
             @Override

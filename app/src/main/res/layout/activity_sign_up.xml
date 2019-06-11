@@ -4,184 +4,171 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/screen_background"
+    android:background="@drawable/scerrn_background"
     tools:context="com.example.crazynet.medicalhub.Sign_upActivity">
 
   <android.support.constraint.ConstraintLayout
       android:layout_width="match_parent"
-      android:layout_height="wrap_content">
+      android:layout_height="wrap_content"
+      android:layout_marginBottom="5dp"
+      android:paddingBottom="5dp">
 
-      <android.support.v7.widget.CardView
-          android:id="@+id/view2"
-          android:layout_width="100dp"
-          android:layout_height="90dp"
-          android:background="@color/screen_background"
-          android:shape="ring"
-          app:cardCornerRadius="3dp"
-          app:layout_constraintTop_toTopOf="parent"
-          app:layout_constraintRight_toRightOf="parent"
+      <TextView
+          android:id="@+id/txt_name"
+          android:layout_width="wrap_content"
+          android:layout_height="70dp"
+          android:layout_marginTop="28dp"
+          android:fontFamily="@font/aldrichregular"
+          android:gravity="center"
+          android:text="MEDICAL"
+          android:textColor="@color/white"
+          android:textSize="32sp"
+          android:textStyle="bold"
           app:layout_constraintLeft_toLeftOf="parent"
-          android:layout_marginTop="30dp">
+          app:layout_constraintRight_toRightOf="@id/txt_name_hub"
+          app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/signUP_Image"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/ic_camera"
-        android:scaleType="center"
-        android:background="@color/screen_background"
-        />
+      <TextView
+          android:id="@+id/txt_name_hub"
+          android:layout_width="wrap_content"
+          android:layout_height="70dp"
+          android:layout_marginTop="28dp"
+          android:fontFamily="@font/aldrichregular"
+          android:gravity="center"
+          android:text="HUB"
+          android:textColor="@color/red"
+          android:textSize="32sp"
+          android:textStyle="bold"
+          app:layout_constraintLeft_toRightOf="@id/txt_name"
+          app:layout_constraintTop_toTopOf="parent" />
 
-      </android.support.v7.widget.CardView>
 
-    <ImageView
-        android:id="@+id/userName_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_user_name"
-        android:layout_marginStart="@dimen/margin_start_end"
-        android:layout_marginTop="35dp"
-        app:layout_constraintTop_toBottomOf="@id/view2"
-        app:layout_constraintStart_toStartOf="parent"/>
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/signUp_userName"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_start_end"
         android:layout_marginStart="@dimen/margin_start_end"
         android:layout_marginTop="21dp"
-        app:layout_constraintStart_toEndOf="@id/userName_image"
-        app:layout_constraintTop_toBottomOf="@id/view2">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_name_hub"
+        style="@style/EditTextHint"
+        app:backgroundTint="@color/dark_white"
+        app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/signUp_edit_userName"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/editTextColor"
+            android:textColor="@color/dark_white"
             android:hint="@string/Username"/>
 
     </android.support.design.widget.TextInputLayout>
 
-    <ImageView
-        android:id="@+id/userMail_image"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:src="@drawable/ic_gmail_logo"
-        android:layout_marginTop="40dp"
-        app:layout_constraintTop_toBottomOf="@id/userName_image"
-        app:layout_constraintStart_toStartOf="@id/userName_image"
-        app:layout_constraintEnd_toEndOf="@id/userName_image"
-        />
+
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/signUp_Mail"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_start_end"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="@dimen/margin_start_end"
         android:layout_marginTop="20dp"
-        app:layout_constraintStart_toEndOf="@id/userMail_image"
+        style="@style/EditTextHint"
+        app:backgroundTint="@color/dark_white"
+        app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/signUp_userName">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/signUp_edit_Mail"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/editTextColor"
+            android:textColor="@color/dark_white"
+            android:textColorHint="@color/dark_white"
             android:hint="@string/mail"/>
 
     </android.support.design.widget.TextInputLayout>
 
-    <ImageView
-        android:id="@+id/userPassword_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_password"
-        android:layout_marginTop="42dp"
-        app:layout_constraintTop_toBottomOf="@id/userMail_image"
-        app:layout_constraintStart_toStartOf="@id/userName_image"
-        app:layout_constraintEnd_toEndOf="@id/userName_image"
-        />
+
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/signUp_Password"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_start_end"
         android:layout_marginStart="@dimen/margin_start_end"
         android:layout_marginTop="23dp"
-        app:layout_constraintStart_toEndOf="@id/userName_image"
+        style="@style/EditTextHint"
+        app:backgroundTint="@color/dark_white"
+        app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/signUp_Mail">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/signUp_edit_Password"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/editTextColor"
+            android:textColor="@color/dark_white"
+            android:textColorHint="@color/dark_white"
             android:inputType="textPassword"
             android:hint="@string/Password"/>
 
     </android.support.design.widget.TextInputLayout>
 
-    <ImageView
-        android:id="@+id/userAge_image"
-        android:layout_width="38dp"
-        android:layout_height="38dp"
-        android:src="@drawable/ic_age"
-        android:layout_marginTop="42dp"
-        app:layout_constraintTop_toBottomOf="@id/userPassword_image"
-        app:layout_constraintStart_toStartOf="@id/userName_image"
-        app:layout_constraintEnd_toEndOf="@id/userName_image"
-        />
+
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/signUp_age"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_start_end"
         android:layout_marginStart="@dimen/margin_start_end"
         android:layout_marginTop="23dp"
-        app:layout_constraintStart_toEndOf="@id/userAge_image"
+        style="@style/EditTextHint"
+        app:backgroundTint="@color/dark_white"
+        app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/signUp_Password">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/signUp_edit_age"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/editTextColor"
+            android:textColor="@color/dark_white"
             android:inputType="number"
+            android:textColorHint="@color/dark_white"
             android:maxLength="3"
             android:hint="@string/age"/>
 
     </android.support.design.widget.TextInputLayout>
 
-    <ImageView
-        android:id="@+id/userAge_ID"
-        android:layout_width="38dp"
-        android:layout_height="38dp"
-        android:src="@drawable/ic_id_card"
-        android:layout_marginTop="42dp"
-        app:layout_constraintTop_toBottomOf="@id/userAge_image"
-        app:layout_constraintStart_toStartOf="@id/userName_image"
-        app:layout_constraintEnd_toEndOf="@id/userName_image"
-        />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/signUp_ID"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_start_end"
         android:layout_marginStart="@dimen/margin_start_end"
         android:layout_marginTop="23dp"
-        app:layout_constraintStart_toEndOf="@id/userAge_image"
+        style="@style/EditTextHint"
+        app:backgroundTint="@color/dark_white"
+        app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/signUp_age">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/signUp_edit_ID"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
-            android:textColor="@color/editTextColor"
+            android:textColor="@color/dark_white"
+            android:textColorHint="@color/dark_white"
             android:hint="@string/id"/>
 
     </android.support.design.widget.TextInputLayout>
@@ -195,14 +182,6 @@
           android:layout_marginTop="18dp"
           app:layout_constraintTop_toBottomOf="@id/signUp_ID">
 
-          <ImageView
-              android:layout_width="0dp"
-              android:layout_weight="1"
-              android:layout_height="30dp"
-              android:src="@drawable/ic_feminism"
-              android:layout_marginTop="15dp"
-              android:layout_marginStart="22dp"
-              />
 
           <TextView
               android:layout_width="0dp"
@@ -210,9 +189,9 @@
               android:layout_height="wrap_content"
               android:text="@string/gender"
               android:layout_marginTop="7dp"
-              android:layout_marginStart="22dp"
+              android:layout_marginStart="40dp"
               android:textSize="20sp"
-              android:textColor="@color/black"
+              android:textColor="@color/white"
               android:gravity="start"
               android:layout_gravity="center"/>
 
@@ -228,6 +207,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="@string/male"
+              android:textColor="@color/white"
               android:textSize="16sp"
               android:layout_marginTop="8dp"
               android:layout_marginEnd="10dp"
@@ -237,6 +217,7 @@
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="@string/female"
+              android:textColor="@color/white"
               android:textSize="16sp"
               android:layout_marginTop="7dp"
               android:layout_gravity="center"/>
@@ -252,24 +233,15 @@
           android:layout_marginTop="18dp"
           app:layout_constraintTop_toBottomOf="@id/signUp_gender_linear">
 
-          <ImageView
-              android:layout_width="0dp"
-              android:layout_weight="1"
-              android:layout_height="30dp"
-              android:src="@mipmap/doctor"
-              android:layout_marginTop="15dp"
-              android:layout_marginStart="22dp"
-              />
-
           <TextView
               android:layout_width="0dp"
               android:layout_weight="3"
               android:layout_height="wrap_content"
               android:text="@string/Doctor"
               android:layout_marginTop="7dp"
-              android:layout_marginStart="22dp"
+              android:layout_marginStart="40dp"
               android:textSize="20sp"
-              android:textColor="@color/black"
+              android:textColor="@color/white"
               android:gravity="start"
               android:layout_gravity="center"/>
 
@@ -288,6 +260,7 @@
                   android:layout_height="wrap_content"
                   android:text="@string/yes"
                   android:textSize="16sp"
+                  android:textColor="@color/white"
                   android:layout_marginTop="8dp"
                   android:layout_marginEnd="10dp"
                   android:layout_gravity="center"/>
@@ -296,6 +269,7 @@
                   android:id="@+id/radio_notDoctor"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
+                  android:textColor="@color/white"
                   android:text="@string/no"
                   android:textSize="16sp"
                   android:checked="true"
@@ -305,36 +279,29 @@
 
       </LinearLayout>
 
-      <ImageView
-          android:id="@+id/userAge_doctor_ID"
-          android:layout_width="38dp"
-          android:layout_height="38dp"
-          android:src="@drawable/ic_id_card"
-          android:layout_marginTop="35dp"
-          android:layout_marginStart="20dp"
-          android:visibility="gone"
-          app:layout_constraintTop_toBottomOf="@id/signUp_ifDoctor_linear"
-          app:layout_constraintStart_toStartOf="@id/userName_image"
-          app:layout_constraintEnd_toEndOf="@id/userName_image"
-          />
 
       <android.support.design.widget.TextInputLayout
           android:id="@+id/signUp_doctor_ID"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginLeft="@dimen/margin_start_end"
-          android:layout_marginStart="@dimen/margin_start_end"
+          android:layout_marginStart="30dp"
           android:layout_marginTop="18dp"
+          style="@style/EditTextHint"
           android:visibility="gone"
-          app:layout_constraintStart_toEndOf="@id/userAge_doctor_ID"
+          app:backgroundTint="@color/dark_white"
+          app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintTop_toBottomOf="@id/signUp_ifDoctor_linear">
 
           <android.support.design.widget.TextInputEditText
               android:id="@+id/signUp_edit_doctor_ID"
               android:layout_width="260dp"
               android:layout_height="wrap_content"
-              android:textColor="@color/editTextColor"
-              android:hint="@string/id"/>
+              android:textColor="@color/dark_white"
+              android:textColorHint="@color/dark_white"
+              android:hint="Doctor ID"/>
 
       </android.support.design.widget.TextInputLayout>
 
@@ -356,7 +323,7 @@
           android:layout_height="match_parent"
           android:text="@string/createAccount"
           android:textColor="@color/white"
-          android:background="@color/button_background"
+          android:background="@drawable/btn_back"
          />
 
       </android.support.v7.widget.CardView>

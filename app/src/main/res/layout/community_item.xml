@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/communities_card"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal"
     app:cardCornerRadius="6dp"
@@ -9,41 +9,61 @@
     android:layout_marginEnd="3dp"
     android:layout_marginStart="3dp"
     android:layout_marginBottom="10dp"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/light_black"
+        android:background="@color/white"
         android:layout_gravity="center_horizontal"
         >
 
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/community_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_gmail_logo"
-            android:scaleType="fitXY"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/doctor"
+            android:scaleType="centerCrop"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginBottom="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
             />
 
         <TextView
             android:id="@+id/community_name"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="sssssssss"
-            android:textColor="@color/editTextColor"
+            android:textColor="@color/black"
             android:textSize="20dp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/community_image"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_margin="5dp"
-            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/community_image"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="20dp"
+            />
+
+        <TextView
+            android:id="@+id/descreption_item"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:text="descreption of this comunity or just a breif"
+            android:textColor="@color/lightblack"
+            android:textSize="15sp"
+            android:lines="3"
+            android:inputType="textMultiLine"
+            app:layout_constraintTop_toBottomOf="@id/community_name"
+            app:layout_constraintStart_toStartOf="@id/community_name"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="35dp"
             />
     </android.support.constraint.ConstraintLayout>
 

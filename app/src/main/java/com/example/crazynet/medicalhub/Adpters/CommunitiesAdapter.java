@@ -18,6 +18,8 @@ import com.example.crazynet.medicalhub.R;
 
 import java.util.ArrayList;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 /**
  * Created by Medhat on 16/04/2019.
  */
@@ -34,15 +36,17 @@ public class CommunitiesAdapter extends RecyclerView.Adapter<CommunitiesAdapter.
 
     class ViewHolder extends RecyclerView.ViewHolder{
 
-        ImageView imageView;
+        CircleImageView imageView;
         TextView name;
         CardView cardView;
+        TextView descreption;
         public ViewHolder(View itemView) {
             super(itemView);
 
             imageView = itemView.findViewById(R.id.community_image);
             name = itemView.findViewById(R.id.community_name);
             cardView = itemView.findViewById(R.id.communities_card);
+            descreption = itemView.findViewById(R.id.descreption_item);
         }
     }
 
@@ -57,14 +61,44 @@ public class CommunitiesAdapter extends RecyclerView.Adapter<CommunitiesAdapter.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
+
+        final Intent intent = new Intent(holder.itemView.getContext(), AskDiscussActivity.class);
 
         holder.name.setText(arrayList.get(position).getName());
         Glide.with(holder.itemView.getContext()).load(arrayList.get(position).getImg()).override(550, 500).into(holder.imageView);
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(holder.itemView.getContext(), AskDiscussActivity.class);
+                intent.putExtra("comm_name",arrayList.get(position).getName());
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.putExtra("comm_name",arrayList.get(position).getName());
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
+        holder.name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.putExtra("comm_name",arrayList.get(position).getName());
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
+        holder.imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.putExtra("comm_name",arrayList.get(position).getName());
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
+        holder.descreption.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                intent.putExtra("comm_name",arrayList.get(position).getName());
                 holder.itemView.getContext().startActivity(intent);
             }
         });
