@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_white"
+    >
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/patient_image"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@mipmap/happydoctor"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:padding="5dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginStart="15dp"
+        android:background="@drawable/circle_background"
+        />
+
+    <TextView
+        android:id="@+id/patient_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medhat Medhat"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="25dp"
+        app:layout_constraintStart_toEndOf="@id/patient_image"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/patient_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Male"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="7dp"
+        android:layout_marginStart="25dp"
+        app:layout_constraintStart_toEndOf="@id/patient_image"
+        app:layout_constraintTop_toBottomOf="@id/patient_name"
+        />
+
+    <TextView
+        android:id="@+id/patient_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="22 years"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="7dp"
+        android:layout_marginStart="35dp"
+        app:layout_constraintStart_toEndOf="@id/patient_gender"
+        app:layout_constraintTop_toBottomOf="@id/patient_name"
+        />
+
+    <TextView
+        android:id="@+id/patient_adress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Minya - samalout"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="7dp"
+        android:layout_marginStart="25dp"
+        app:layout_constraintStart_toEndOf="@id/patient_image"
+        app:layout_constraintTop_toBottomOf="@id/patient_gender"
+        />
+
+
+    <TextView
+        android:id="@+id/patient_NID"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12345678912345"
+        android:textSize="18dp"
+        android:textColor="@color/black"
+        android:layout_marginTop="7dp"
+        android:layout_marginStart="25dp"
+        app:layout_constraintStart_toEndOf="@id/patient_image"
+        app:layout_constraintTop_toBottomOf="@id/patient_adress"
+        />
+
+    <TextView
+        android:id="@+id/txt_bio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bio"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/patient_NID"/>
+
+    <TextView
+        android:id="@+id/edit_bio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Bio"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@id/card_bio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.658"
+        app:layout_constraintStart_toEndOf="@id/txt_bio"
+        app:layout_constraintTop_toTopOf="@id/txt_bio" />
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_bio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/txt_bio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="5dp"
+        >
+
+        <EditText
+            android:id="@+id/patient_bio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:lines="4"
+            android:enabled="false"
+            android:text="blablablablablablablablablablablablablablablablablablablablablablablablablabla"
+            android:textColor="@color/black"
+            android:padding="5dp"/>
+
+    </android.support.v7.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/txt_medical_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medical Info"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_bio"/>
+
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_medical_info"
+        android:layout_width="match_parent"
+        android:layout_height="75dp"
+        app:layout_constraintTop_toBottomOf="@id/txt_medical_info"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        app:cardCornerRadius="5dp"
+        >
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:paddingTop="8dp"
+        >
+
+    <TextView
+        android:id="@+id/txt_hight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hight"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/txt_hight_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="173 CM"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/txt_hight"
+        app:layout_constraintStart_toStartOf="@id/txt_hight"
+        />
+
+
+    <TextView
+        android:id="@+id/txt_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weight"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@id/txt_hight_profile"
+        />
+
+    <TextView
+        android:id="@+id/txt_weight_prfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="73 KG"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/txt_weight"
+        app:layout_constraintStart_toStartOf="@id/txt_weight"
+        />
+
+        <TextView
+            android:id="@+id/txt_blood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Blood Type"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginStart="35dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toEndOf="@id/txt_weight"
+            />
+
+        <TextView
+            android:id="@+id/txt_blood_prfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="B+"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_blood"
+            app:layout_constraintStart_toStartOf="@id/txt_blood"
+            />
+    </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/txt_medical_reports"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medical Reports"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_medical_info"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/patient_profile_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="55dp"
+        android:background="@color/light_black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_medical_reports"
+        app:layout_constraintBottom_toBottomOf="parent"
+        >
+
+    </android.support.v7.widget.RecyclerView>
+</android.support.constraint.ConstraintLayout>
+</ScrollView>
+
+
+
+

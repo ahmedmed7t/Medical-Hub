@@ -31,4 +31,14 @@
     <item name="android:textColor">@color/white</item>
     </style>
 
+
+    <style name="myTimePickerStyle" parent="@android:style/Widget.Material.Light.TimePicker">
+        <item name="android:numbersTextColor">#ffffff</item>
+        <item name="android:numbersBackgroundColor">@color/red_light</item>
+        <item name="android:numbersSelectorColor">#88000000</item>
+        <item name="android:headerBackground">@color/red_light</item>
+    </style>
+
+
+
 </resources>

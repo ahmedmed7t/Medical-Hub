@@ -24,7 +24,6 @@ import butterknife.ButterKnife;
 public class home2Activity extends AppCompatActivity {
 
 
-    Fragment fragment;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -39,13 +38,16 @@ public class home2Activity extends AppCompatActivity {
                     fragmentTransaction.commit();
                     return true;
                 case R.id.navigation_reminder:
-
+                    fragmentTransaction.replace(R.id.main_frgment, new ReminderFragment());
+                    fragmentTransaction.commit();
                     return true;
                 case R.id.navigation_profile:
-
+                    fragmentTransaction.replace(R.id.main_frgment, new PatientProfileFragment());
+                    fragmentTransaction.commit();
                     return true;
                 case R.id.navigation_about:
-
+                    fragmentTransaction.replace(R.id.main_frgment, new AboutUsFragment());
+                    fragmentTransaction.commit();
                     return true;
                 case R.id.navigation_doctors:
                     fragmentTransaction.replace(R.id.main_frgment, new AskFragment());
