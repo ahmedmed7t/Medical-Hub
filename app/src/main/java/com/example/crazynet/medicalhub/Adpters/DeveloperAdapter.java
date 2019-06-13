@@ -1,6 +1,7 @@
 package com.example.crazynet.medicalhub.Adpters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,7 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.example.crazynet.medicalhub.AddHistoryActivity;
 import com.example.crazynet.medicalhub.Model.Developers;
+import com.example.crazynet.medicalhub.PatientForDaoctorActivity;
 import com.example.crazynet.medicalhub.R;
 
 import java.util.ArrayList;
@@ -46,6 +50,8 @@ public class DeveloperAdapter extends RecyclerView.Adapter<DeveloperAdapter.View
 
         holder.d_name.setText(developers.get(position).getName());
         holder.d_job.setText(developers.get(position).getJob());
+        Glide.with(context).load(developers.get(position).getImage()).into(holder.d_image);
+        holder.d_image.setImageDrawable(developers.get(position).getImage());
     }
 
     @Override
@@ -62,6 +68,7 @@ public class DeveloperAdapter extends RecyclerView.Adapter<DeveloperAdapter.View
             d_name = itemView.findViewById(R.id.developer_name);
             d_job = itemView.findViewById(R.id.developer_job);
             d_image = itemView.findViewById(R.id.developer_image);
+
         }
     }
 }

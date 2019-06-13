@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.button_login)
     void login(){
         Intent intent = new Intent(this,home2Activity.class);
+        intent.putExtra("who",userName.getText().toString());
         startActivity(intent);
     }
 

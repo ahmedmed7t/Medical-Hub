@@ -1,7 +1,9 @@
 package com.example.crazynet.medicalhub;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -10,6 +12,8 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -23,11 +27,11 @@ import butterknife.ButterKnife;
 
 public class home2Activity extends AppCompatActivity {
 
+    String who;
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             FragmentManager fragmentManager = getSupportFragmentManager();
@@ -53,7 +57,14 @@ public class home2Activity extends AppCompatActivity {
                     fragmentTransaction.replace(R.id.main_frgment, new AskFragment());
                     fragmentTransaction.commit();
                     return true;
-
+                case R.id.navigation_search_patient:
+                    fragmentTransaction.replace(R.id.main_frgment, new SearchForPatientFragment());
+                    fragmentTransaction.commit();
+                    return true;
+                case R.id.navigation_profile_patient:
+                    fragmentTransaction.replace(R.id.main_frgment, new DoctorProfileFragment());
+                    fragmentTransaction.commit();
+                    return true;
             }
             return false;
         }
@@ -70,6 +81,17 @@ public class home2Activity extends AppCompatActivity {
         ButterKnife.bind(this);
 
 
+        Intent intent = getIntent();
+        who = intent.getStringExtra("who");
+
+        if(who.equals("p")||who.equals("P"))
+            navigation.inflateMenu(R.menu.navigation);
+        else if(who.equals("d")||who.equals("D"))
+            navigation.inflateMenu(R.menu.patient_navigation);
+        else
+            navigation.inflateMenu(R.menu.navigation);
+
+
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.main_frgment, new homeFragment());
@@ -79,4 +101,13 @@ public class home2Activity extends AppCompatActivity {
 
     }
 
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+
+
+
+        return true;
+    }
 }

@@ -61,12 +61,12 @@ public class AboutUsFragment extends Fragment {
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(),2));
 
         ArrayList<Developers> arrayList = new ArrayList<>();
-        arrayList.add(new Developers("","Ahmed Medhat","Android Developer"));
-        arrayList.add(new Developers("","Mostafa Ahmed","Back End Developer"));
-        arrayList.add(new Developers("","Walid Qotb","Android Developer"));
-        arrayList.add(new Developers("","Fatma Adel","Front End Developer"));
-        arrayList.add(new Developers("","Rehab Mohamed","UI & UX Designer"));
-        arrayList.add(new Developers("","Mahmoud Shaaban","Front End Developer"));
+        arrayList.add(new Developers(getResources().getDrawable(R.mipmap.ana),"Ahmed Medhat","Android Developer"));
+        arrayList.add(new Developers(getResources().getDrawable(R.mipmap.yasen),"Mostafa Ahmed","Back End Developer"));
+        arrayList.add(new Developers(getResources().getDrawable(R.mipmap.walid),"Walid Qotb","Android Developer"));
+        arrayList.add(new Developers(getResources().getDrawable(R.mipmap.fatma),"Fatma Adel","Front End Developer"));
+        arrayList.add(new Developers(getResources().getDrawable(R.mipmap.rehab),"Rehab Mohamed","UI & UX Designer"));
+        arrayList.add(new Developers(getResources().getDrawable(R.mipmap.shaaban),"Mahmoud Shaaban","Front End Developer"));
 
         recyclerView.setAdapter(new DeveloperAdapter(getContext(),arrayList));
 

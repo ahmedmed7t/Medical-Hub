@@ -17,7 +17,8 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".SplashActivity"
+        <activity
+            android:name=".SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -37,22 +38,28 @@
         <activity
             android:name=".doctorForPatientActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".AddReminderActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+        <activity
+            android:name=".AddReminderActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <receiver
             android:name=".Reminder.Alarm_Receiver"
-            android:enabled="true"
-            >
-        </receiver>
+            android:enabled="true" />
 
         <service
             android:name=".Reminder.Alarm_Service"
             android:enabled="true"
-            android:exported="false"
-            >
-        </service>
+            android:exported="false" />
 
+        <activity
+            android:name=".AddPostActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity android:name=".PatientForDaoctorActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
+
+        <activity android:name=".AddHistoryActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

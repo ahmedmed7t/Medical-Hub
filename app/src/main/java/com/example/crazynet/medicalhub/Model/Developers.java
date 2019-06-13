@@ -1,20 +1,22 @@
 package com.example.crazynet.medicalhub.Model;
 
+import android.graphics.drawable.Drawable;
+
 /**
  * Created by Medhat on 12/06/2019.
  */
 
 public class Developers {
 
-    private String Image;
+    private Drawable Image;
     private String Name;
     private String job;
 
-    public String getImage() {
+    public Drawable getImage() {
         return Image;
     }
 
-    public void setImage(String image) {
+    public void setImage(Drawable image) {
         Image = image;
     }
 
@@ -38,7 +40,7 @@ public class Developers {
 
     }
 
-    public Developers(String image, String name, String job) {
+    public Developers(Drawable image, String name, String job) {
 
         Image = image;
         Name = name;

@@ -1,8 +1,10 @@
 package com.example.crazynet.medicalhub;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -25,6 +27,8 @@ public class DiscussFragment extends Fragment {
     RecyclerView recyclerView;
     String commName;
     TextView communityName;
+    FloatingActionButton floatingActionButton;
+
 
     public void setCommName(String commName) {
         this.commName = commName;
@@ -40,6 +44,15 @@ public class DiscussFragment extends Fragment {
 
         communityName = view.findViewById(R.id.txt_name_discuss);
         communityName.setText(commName);
+
+        floatingActionButton = view.findViewById(R.id.fab_add_post);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getContext(),AddPostActivity.class);
+                getContext().startActivity(intent);
+            }
+        });
 
         recyclerView = view.findViewById(R.id.discuss_recycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getContext()));

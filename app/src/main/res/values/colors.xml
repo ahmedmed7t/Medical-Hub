@@ -21,6 +21,7 @@
     <color name="nav">#cd8dd3</color>
     <color name="pink">#ffd9df</color>
     <color name="lightblack">#4C4C4C</color>
+    <color name="back_light_gray">#11000000</color>
 
     <color name="Lightwhite">#bbffffff</color>
     <color name="text_color">#505050</color>
