@@ -97,17 +97,6 @@ public class home2Activity extends AppCompatActivity {
         fragmentTransaction.replace(R.id.main_frgment, new homeFragment());
         fragmentTransaction.commit();
 
-
-
     }
 
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-
-
-
-        return true;
-    }
 }
