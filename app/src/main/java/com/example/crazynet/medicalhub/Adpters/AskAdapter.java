@@ -22,7 +22,7 @@ import com.example.crazynet.medicalhub.doctorForPatientActivity;
 import java.util.ArrayList;
 
 /**
- * Created by CrazyNet on 29/04/2019.
+ * Created by Medhat on 29/04/2019.
  */
 
 public class AskAdapter extends RecyclerView.Adapter<AskAdapter.ViewHolder> {

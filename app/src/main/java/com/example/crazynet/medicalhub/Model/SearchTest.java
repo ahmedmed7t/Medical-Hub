@@ -1,7 +1,7 @@
 package com.example.crazynet.medicalhub.Model;
 
 /**
- * Created by CrazyNet on 29/04/2019.
+ * Created by Medhat on 29/04/2019.
  */
 
 public class SearchTest {

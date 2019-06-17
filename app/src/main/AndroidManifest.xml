@@ -60,7 +60,10 @@
         <activity
             android:name=".AddHistoryActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".cont_signActivity"
+        <activity
+            android:name=".cont_signActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".CommentsActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 

@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.crazynet.medicalhub.AskDiscussActivity;
+import com.example.crazynet.medicalhub.DiscussFragment;
 import com.example.crazynet.medicalhub.Model.CommunitiesTest;
 import com.example.crazynet.medicalhub.R;
 
@@ -72,6 +73,9 @@ public class CommunitiesAdapter extends RecyclerView.Adapter<CommunitiesAdapter.
             @Override
             public void onClick(View v) {
                 intent.putExtra("comm_name",arrayList.get(position).getName());
+                DiscussFragment discussFragment = new DiscussFragment();
+                discussFragment.setCommId(String.valueOf(arrayList.get(position).getId()));
+                intent.putExtra("comm_id",arrayList.get(position).getId());
                 holder.itemView.getContext().startActivity(intent);
             }
         });
@@ -79,6 +83,9 @@ public class CommunitiesAdapter extends RecyclerView.Adapter<CommunitiesAdapter.
             @Override
             public void onClick(View v) {
                 intent.putExtra("comm_name",arrayList.get(position).getName());
+                intent.putExtra("comm_id",String.valueOf(arrayList.get(position).getId()));
+                DiscussFragment discussFragment = new DiscussFragment();
+                discussFragment.setCommId(String.valueOf(arrayList.get(position).getId()));
                 holder.itemView.getContext().startActivity(intent);
             }
         });
@@ -86,6 +93,9 @@ public class CommunitiesAdapter extends RecyclerView.Adapter<CommunitiesAdapter.
             @Override
             public void onClick(View v) {
                 intent.putExtra("comm_name",arrayList.get(position).getName());
+                intent.putExtra("comm_id",String.valueOf(arrayList.get(position).getId()));
+                DiscussFragment discussFragment = new DiscussFragment();
+                discussFragment.setCommId(String.valueOf(arrayList.get(position).getId()));
                 holder.itemView.getContext().startActivity(intent);
             }
         });
@@ -93,6 +103,9 @@ public class CommunitiesAdapter extends RecyclerView.Adapter<CommunitiesAdapter.
             @Override
             public void onClick(View v) {
                 intent.putExtra("comm_name",arrayList.get(position).getName());
+                intent.putExtra("comm_id",String.valueOf(arrayList.get(position).getId()));
+                DiscussFragment discussFragment = new DiscussFragment();
+                discussFragment.setCommId(String.valueOf(arrayList.get(position).getId()));
                 holder.itemView.getContext().startActivity(intent);
             }
         });
@@ -100,6 +113,9 @@ public class CommunitiesAdapter extends RecyclerView.Adapter<CommunitiesAdapter.
             @Override
             public void onClick(View v) {
                 intent.putExtra("comm_name",arrayList.get(position).getName());
+                intent.putExtra("comm_id",String.valueOf(arrayList.get(position).getId()));
+                DiscussFragment discussFragment = new DiscussFragment();
+                discussFragment.setCommId(String.valueOf(arrayList.get(position).getId()));
                 holder.itemView.getContext().startActivity(intent);
             }
         });

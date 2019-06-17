@@ -36,12 +36,14 @@ public class AskDiscussActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         String comm = intent.getStringExtra("comm_name");
+        String comm_id = intent.getStringExtra("comm_id");
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
 
         DiscussFragment discussFragment = new DiscussFragment();
         discussFragment.setCommName(comm);
+        discussFragment.setCommId(comm_id);
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

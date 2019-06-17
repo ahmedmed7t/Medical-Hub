@@ -1,14 +1,23 @@
 package com.example.crazynet.medicalhub.Model;
 
 /**
- * Created by CrazyNet on 16/04/2019.
+ * Created by Medhat on 16/04/2019.
  */
 
 public class CommunitiesTest {
 
+    private int id;
     private String img;
     private String name;
     private String descreption;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getDescreption() {
         return descreption;

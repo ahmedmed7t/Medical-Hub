@@ -133,7 +133,6 @@ public class Sign_upActivity extends AppCompatActivity {
         intent.putExtra("is_male", is_male);
         intent.putExtra("expertise",expertise);
 
-
         if(firstName.getText().toString().equals("") || lastName.getText().toString().equals("")||
                 N_id.getText().toString().equals("") || mail.getText().toString().equals("") ||
                 password.getText().toString().equals(""))

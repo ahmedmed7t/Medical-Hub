@@ -93,14 +93,17 @@ public class home2Activity extends AppCompatActivity {
         Intent intent = getIntent();
         who = intent.getStringExtra("who");
 
-        if(who.equals("p")||who.equals("P"))
+        if(who.equals("p")||who.equals("P")){
             navigation.inflateMenu(R.menu.navigation);
+            is_doctor = false;
+        }
         else if(who.equals("d")||who.equals("D")) {
             navigation.inflateMenu(R.menu.patient_navigation);
             is_doctor = true ;
-        } else
+        } else {
             navigation.inflateMenu(R.menu.navigation);
-
+            is_doctor = false;
+        }
 
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();

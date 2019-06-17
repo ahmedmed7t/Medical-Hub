@@ -49,7 +49,7 @@ public class cont_signActivity extends AppCompatActivity {
         is_doctor = intent.getBooleanExtra("is_doctor",false);
         is_male = intent.getBooleanExtra("is_male",true);
         expertise = intent.getStringExtra("expertise");
-
+        String ssss = "";
     }
 
     @OnClick(R.id.create_account)
@@ -107,10 +107,10 @@ public class cont_signActivity extends AppCompatActivity {
                 } else {
                     editor.putString("d_is_nale", String.valueOf(0));
                 }
+                editor.putString("d_expertise",expertise);
                 editor.putString("d_age", age.getText().toString());
                 editor.putString("d_phone", phone.getText().toString());
                 editor.putString("d_address", address.getText().toString());
-                editor.putString("d_expertise",expertise);
                 editor.apply();
             }
 

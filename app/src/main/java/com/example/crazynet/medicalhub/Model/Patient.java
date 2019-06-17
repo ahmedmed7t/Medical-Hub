@@ -3,7 +3,7 @@ package com.example.crazynet.medicalhub.Model;
 import java.util.ArrayList;
 
 /**
- * Created by CrazyNet on 13/06/2019.
+ * Created by Medhat on 13/06/2019.
  */
 
 public class Patient {

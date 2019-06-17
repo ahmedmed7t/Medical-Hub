@@ -13,6 +13,15 @@ public class PostTest {
     private Boolean isDoctor;
     private int likes;
     private String comm;
+    private int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getComm() {
         return comm;

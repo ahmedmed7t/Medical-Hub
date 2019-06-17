@@ -83,37 +83,18 @@ public class homeFragment extends Fragment {
         arrayList.add(new CommunitiesTest("https://visualstudiomagazine.com/~/media/ECG/visualstudiomagazine/Images/introimages2014/0514vsm_VogelJava.jpg","backbone disease","Spinal disease refers to a condition impairing the backbone. These include various diseases of the back or spine (\"dorso-\"), such as kyphosis. Dorsalgia refers to back pain"));
         arrayList.add(new CommunitiesTest("https://www.researchgate.net/publication/265518023/figure/fig1/AS:611522573238272@1522809751173/Schematic-of-a-human-lung-with-its-five-lobes-RUL-right-upper-lobe-RML-right-middle.png","Lung disease","Some lung diseases can lead to respiratory failure such as asthma, COPD, infections like influenza, lung cancer, and many other breathing problems."));
 
+        arrayList.get(0).setId(1);
+        arrayList.get(1).setId(2);
+        arrayList.get(2).setId(3);
+        arrayList.get(3).setId(4);
+        arrayList.get(4).setId(5);
+        arrayList.get(5).setId(6);
+        arrayList.get(6).setId(7);
 
         CommunitiesAdapter adapter = new CommunitiesAdapter(arrayList,this.getContext());
         communities_recycler.setAdapter(adapter);
 
         return view;
     }
-
-
-    public void addToPref(ArrayList<CommunitiesTest> arrayList){
-
-        SharedPreferences preferences = getActivity().getSharedPreferences("communities",Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-        Gson gson = new Gson();
-        String json = gson.toJson(arrayList);
-        editor.putString(json,"m_communities");
-        editor.apply();
-
-    }
-
-    public ArrayList<CommunitiesTest> loadFromPref(){
-
-        ArrayList<CommunitiesTest> arrayList ;
-
-        SharedPreferences preferences = getActivity().getSharedPreferences("communities",Context.MODE_PRIVATE);
-        Gson gson = new Gson();
-        String json = preferences.getString("m_communities",null);
-        Type type = new TypeToken<ArrayList<CommunitiesTest>>(){}.getType();
-        arrayList = gson.fromJson(json,type);
-
-        return arrayList;
-    }
-
 
 }

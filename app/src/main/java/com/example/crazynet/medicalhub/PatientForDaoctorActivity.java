@@ -69,11 +69,11 @@ public class PatientForDaoctorActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         arrayList = new ArrayList<>();
-        arrayList.add(new Report("Ahmed Khaled","diabates","Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu ","17/7/2019"));
-        arrayList.add(new Report("ALi mohamed","High blood preauser","Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a ","23/12/2018"));
-        arrayList.add(new Report("yaser mahmoud","Anemia","Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.","17/8/2018"));
-        arrayList.add(new Report("Medhat mohamed","Lung diseases","Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus,","10/5/2018"));
-        arrayList.add(new Report("ahmed mohamed","bone diseases","sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. ","17/7/2016"));
+        arrayList.add(new Report("Ahmed Khaled","diabates","Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu ","17 June 2019"));
+        arrayList.add(new Report("ALi mohamed","High blood preauser","Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a ","23 December 2018"));
+        arrayList.add(new Report("yaser mahmoud","Anemia","Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.","17 Mars2018"));
+        arrayList.add(new Report("Medhat mohamed","Lung diseases","Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus,","10 April 2018"));
+        arrayList.add(new Report("ahmed mohamed","bone diseases","sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. ","17 Jule 2016"));
 
         recyclerView.setAdapter(new MedicalReportsAdapter(this,arrayList));
 

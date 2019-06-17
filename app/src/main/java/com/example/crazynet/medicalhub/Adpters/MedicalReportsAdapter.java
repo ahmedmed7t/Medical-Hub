@@ -14,7 +14,7 @@ import com.example.crazynet.medicalhub.R;
 import java.util.ArrayList;
 
 /**
- * Created by CrazyNet on 12/06/2019.
+ * Created by Medhat on 12/06/2019.
  */
 
 public class MedicalReportsAdapter extends RecyclerView.Adapter<MedicalReportsAdapter.ViewHolder> {

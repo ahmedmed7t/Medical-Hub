@@ -20,7 +20,7 @@ import java.util.ArrayList;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
- * Created by CrazyNet on 13/06/2019.
+ * Created by Medhat on 13/06/2019.
  */
 
 public class searchForPatientAdapter extends RecyclerView.Adapter<searchForPatientAdapter.ViewHolder> {

@@ -68,6 +68,9 @@ public class NotAnsweredQuestionFragment extends Fragment {
         questions.add("Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem ?");
         questions.add("Maecenas tempus, tellus eget condimentum rhoncus ? ");
         questions.add("Etiam ultricies nisi vel augue ? ");
+        questions.add("Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem ?");
+        questions.add("Maecenas tempus, tellus eget condimentum rhoncus ? ");
+        questions.add("Etiam ultricies nisi vel augue ? ");
 
         ArrayList<String> newArray = removeFromAnswerd(questions);
 
