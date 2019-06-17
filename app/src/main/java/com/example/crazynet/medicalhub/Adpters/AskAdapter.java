@@ -80,6 +80,11 @@ public class AskAdapter extends RecyclerView.Adapter<AskAdapter.ViewHolder> {
             public void onClick(View v) {
                 Intent intent = new Intent(holder.itemView.getContext(),doctorForPatientActivity.class);
                 intent.putExtra("doctor_name",arrayList.get(position).getName());
+                intent.putExtra("doctor_address",arrayList.get(position).getPlace());
+                intent.putExtra("doctor_exper",arrayList.get(position).getExpertise());
+                intent.putExtra("doctor_rate",arrayList.get(position).getRate());
+                intent.putExtra("doctor_phone",arrayList.get(position).getPhone());
+                intent.putExtra("doctor_image",arrayList.get(position).getImage());
                 holder.itemView.getContext().startActivity(intent);
             }
         });

@@ -26,6 +26,7 @@ public class NotAnsweredQuestionFragment extends Fragment {
     private String mParam2;
 
     RecyclerView recyclerView;
+    public static ArrayList<Integer> positions = new ArrayList<>();
 
     public NotAnsweredQuestionFragment() {
         // Required empty public constructor
@@ -61,16 +62,28 @@ public class NotAnsweredQuestionFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         ArrayList<String> questions = new ArrayList<>();
-        questions.add("question ?");
-        questions.add("question ?");
-        questions.add("question ?");
-        questions.add("question ?");
-        questions.add("question ?");
-        questions.add("question ?");
+        questions.add("Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus ?");
+        questions.add("Donec sodales sagittis magna Sed consequat ?");
+        questions.add("Maecenas nec odio et ante tincidunt tempus ?");
+        questions.add("Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem ?");
+        questions.add("Maecenas tempus, tellus eget condimentum rhoncus ? ");
+        questions.add("Etiam ultricies nisi vel augue ? ");
 
-        recyclerView.setAdapter(new questionAdapter(questions,getContext()));
+        ArrayList<String> newArray = removeFromAnswerd(questions);
+
+        recyclerView.setAdapter(new questionAdapter(newArray,getContext()));
 
         return view;
+    }
+
+    public ArrayList<String> removeFromAnswerd(ArrayList<String> arrayList){
+
+        for(int i = 0 ; i < positions.size() ; i++){
+            int s = positions.get(i);
+            arrayList.remove(s);
+        }
+
+        return arrayList;
     }
 
 }

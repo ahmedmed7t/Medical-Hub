@@ -19,7 +19,7 @@ import com.example.crazynet.medicalhub.R;
 import java.util.ArrayList;
 
 /**
- * Created by CrazyNet on 29/04/2019.
+ * Created by Medhat on 29/04/2019.
  */
 
 public class PostAdapter  extends RecyclerView.Adapter<PostAdapter.ViewHolder>  {
@@ -36,7 +36,7 @@ public class PostAdapter  extends RecyclerView.Adapter<PostAdapter.ViewHolder>  
 
         ImageView image;
         TextView name;
-        TextView isDoctor;
+        TextView isDoctor,likeNum;
         TextView content;
         TextView date;
         Button like;
@@ -53,6 +53,7 @@ public class PostAdapter  extends RecyclerView.Adapter<PostAdapter.ViewHolder>  
             like = itemView.findViewById(R.id.post_like);
             comment = itemView.findViewById(R.id.post_comment);
             commentLinear = itemView.findViewById(R.id.post_linear2);
+            likeNum = itemView.findViewById(R.id.like_num);
         }
     }
 
@@ -66,32 +67,39 @@ public class PostAdapter  extends RecyclerView.Adapter<PostAdapter.ViewHolder>  
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
 
-        Glide.with(holder.itemView.getContext()).load(arrayList.get(position).getImage()).into(holder.image);
-        holder.name.setText(arrayList.get(position).getName());
-        holder.content.setText(arrayList.get(position).getContent());
-        holder.date.setText(arrayList.get(position).getDate());
-        if(arrayList.get(position).getDoctor() == false){
             holder.isDoctor.setVisibility(View.INVISIBLE);
-        }
-        holder.like.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-               if(holder.like.getTextColors().getDefaultColor() == (holder.itemView.getResources().getColor(R.color.black))){
-                   holder.like.setTextColor(holder.itemView.getResources().getColor(R.color.red_light));
-               }else{
-                   holder.like.setTextColor(holder.itemView.getResources().getColor(R.color.black));
-               }
+            Glide.with(holder.itemView.getContext()).load(arrayList.get(position).getImage()).into(holder.image);
+            holder.content.setText(arrayList.get(position).getContent());
+            holder.date.setText(arrayList.get(position).getDate());
+            holder.likeNum.setText(String.valueOf(arrayList.get(position).getLikes()));
+            if (arrayList.get(position).getDoctor() == false) {
+                holder.name.setText(arrayList.get(position).getName());
+            } else {
+                holder.name.setText("Dr.  " + arrayList.get(position).getName());
             }
-        });
+            holder.like.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (holder.like.getTextColors().getDefaultColor() == (holder.itemView.getResources().getColor(R.color.black))) {
+                        holder.like.setTextColor(holder.itemView.getResources().getColor(R.color.red_light));
+                        arrayList.get(position).setLikes(arrayList.get(position).getLikes() + 1);
+                        notifyDataSetChanged();
+                    } else {
+                        holder.like.setTextColor(holder.itemView.getResources().getColor(R.color.black));
+                        arrayList.get(position).setLikes(arrayList.get(position).getLikes() - 1);
+                        notifyDataSetChanged();
+                    }
+                }
+            });
 
-        holder.comment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                holder.commentLinear.setVisibility(View.VISIBLE);
-            }
-        });
+            holder.comment.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    holder.commentLinear.setVisibility(View.VISIBLE);
+                }
+            });
     }
 
     @Override

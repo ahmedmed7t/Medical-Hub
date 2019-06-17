@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/scerrn_background"
+    tools:context="com.example.crazynet.medicalhub.Sign_upActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:paddingBottom="5dp">
+
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/aldrichregular"
+            android:gravity="center"
+            android:text="MEDICAL"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="@id/txt_name_hub"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_name_hub"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/aldrichregular"
+            android:gravity="center"
+            android:text="HUB"
+            android:textColor="@color/red"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/txt_name"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/signUp_phone"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_start_end"
+            android:layout_marginStart="@dimen/margin_start_end"
+            android:layout_marginTop="21dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_name_hub"
+            style="@style/EditTextHint"
+            app:backgroundTint="@color/dark_white"
+            app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/signUp_edit_phone"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_white"
+                android:hint="Phone"
+                android:inputType="number"
+                android:maxLength="11"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/signUp_age"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_start_end"
+            android:layout_marginStart="@dimen/margin_start_end"
+            android:layout_marginTop="20dp"
+            style="@style/EditTextHint"
+            app:backgroundTint="@color/dark_white"
+            app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signUp_phone">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/signUp_edit_age"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_white"
+                android:textColorHint="@color/dark_white"
+                android:hint="Age"
+                android:inputType="number"
+                android:maxLength="3"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/signUp_address"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_start_end"
+            android:layout_marginStart="@dimen/margin_start_end"
+            android:layout_marginTop="23dp"
+            style="@style/EditTextHint"
+            app:backgroundTint="@color/dark_white"
+            app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signUp_age">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/signUp_edit_address"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_white"
+                android:textColorHint="@color/dark_white"
+                android:hint="Address"
+                android:inputType="textMultiLine"
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/signUp_bio"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_start_end"
+            android:layout_marginStart="@dimen/margin_start_end"
+            android:layout_marginTop="23dp"
+            style="@style/EditTextHint"
+            app:backgroundTint="@color/dark_white"
+            app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/signUp_address">
+
+            <android.support.design.widget.TextInputEditText
+                android:id="@+id/signUp_edit_bio"
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_white"
+                android:textColorHint="@color/dark_white"
+                android:hint="Bio"
+                android:lines="3"
+                android:gravity="top"
+                android:inputType="textMultiLine"
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/sign_card"
+            android:layout_width="@dimen/button_width"
+            android:layout_height="@dimen/button_hight"
+            app:cardCornerRadius="3dp"
+            android:layout_marginTop="50dp"
+            android:elevation="@dimen/elevation_corner"
+            app:layout_constraintTop_toBottomOf="@id/signUp_bio"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <Button
+                android:id="@+id/create_account"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/createAccount"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_back"
+                />
+
+        </android.support.v7.widget.CardView>
+
+    </android.support.constraint.ConstraintLayout>
+
+</ScrollView>

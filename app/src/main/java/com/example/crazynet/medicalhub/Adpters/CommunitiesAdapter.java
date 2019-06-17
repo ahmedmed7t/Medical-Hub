@@ -66,6 +66,7 @@ public class CommunitiesAdapter extends RecyclerView.Adapter<CommunitiesAdapter.
         final Intent intent = new Intent(holder.itemView.getContext(), AskDiscussActivity.class);
 
         holder.name.setText(arrayList.get(position).getName());
+        holder.descreption.setText(arrayList.get(position).getDescreption());
         Glide.with(holder.itemView.getContext()).load(arrayList.get(position).getImg()).override(550, 500).into(holder.imageView);
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override

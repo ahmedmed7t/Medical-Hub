@@ -45,7 +45,7 @@
 
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/signUp_userName"
+        android:id="@+id/signUp_firstName"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_start_end"
@@ -59,18 +59,18 @@
         app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout">
 
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/signUp_edit_userName"
+            android:id="@+id/signUp_edit_firstName"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:textColor="@color/dark_white"
-            android:hint="@string/Username"/>
+            android:hint="First Name"/>
 
     </android.support.design.widget.TextInputLayout>
 
 
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/signUp_Mail"
+        android:id="@+id/signUp_lastName"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_start_end"
@@ -81,22 +81,22 @@
         app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/signUp_userName">
+        app:layout_constraintTop_toBottomOf="@id/signUp_firstName">
 
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/signUp_edit_Mail"
+            android:id="@+id/signUp_edit_lastName"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:textColor="@color/dark_white"
             android:textColorHint="@color/dark_white"
-            android:hint="@string/mail"/>
+            android:hint="Last Name"/>
 
     </android.support.design.widget.TextInputLayout>
 
 
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/signUp_Password"
+        android:id="@+id/signUp_mail"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin_start_end"
@@ -107,44 +107,44 @@
         app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/signUp_Mail">
+        app:layout_constraintTop_toBottomOf="@id/signUp_lastName">
 
         <android.support.design.widget.TextInputEditText
-            android:id="@+id/signUp_edit_Password"
+            android:id="@+id/signUp_edit_mail"
             android:layout_width="260dp"
             android:layout_height="wrap_content"
             android:textColor="@color/dark_white"
             android:textColorHint="@color/dark_white"
+            android:hint="Email"
+            android:inputType="textEmailAddress"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/signUp_password"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_start_end"
+        android:layout_marginStart="@dimen/margin_start_end"
+        android:layout_marginTop="23dp"
+        style="@style/EditTextHint"
+        app:backgroundTint="@color/dark_white"
+        app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/signUp_mail">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/signUp_edit_password"
+            android:layout_width="260dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_white"
             android:inputType="textPassword"
-            android:hint="@string/Password"/>
-
-    </android.support.design.widget.TextInputLayout>
-
-
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/signUp_age"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/margin_start_end"
-        android:layout_marginStart="@dimen/margin_start_end"
-        android:layout_marginTop="23dp"
-        style="@style/EditTextHint"
-        app:backgroundTint="@color/dark_white"
-        app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/signUp_Password">
-
-        <android.support.design.widget.TextInputEditText
-            android:id="@+id/signUp_edit_age"
-            android:layout_width="260dp"
-            android:layout_height="wrap_content"
-            android:textColor="@color/dark_white"
-            android:inputType="number"
             android:textColorHint="@color/dark_white"
-            android:maxLength="3"
-            android:hint="@string/age"/>
+            android:hint="@string/Password"
+            />
 
     </android.support.design.widget.TextInputLayout>
 
@@ -161,7 +161,7 @@
         app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/signUp_age">
+        app:layout_constraintTop_toBottomOf="@id/signUp_password">
 
         <android.support.design.widget.TextInputEditText
             android:id="@+id/signUp_edit_ID"
@@ -169,7 +169,9 @@
             android:layout_height="wrap_content"
             android:textColor="@color/dark_white"
             android:textColorHint="@color/dark_white"
-            android:hint="@string/id"/>
+            android:hint="N-ID"
+            android:inputType="number"
+            android:maxLength="14"/>
 
     </android.support.design.widget.TextInputLayout>
 
@@ -204,16 +206,19 @@
               android:orientation="horizontal">
 
           <RadioButton
+              android:id="@+id/radio_male"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="@string/male"
               android:textColor="@color/white"
               android:textSize="16sp"
+              android:checked="true"
               android:layout_marginTop="8dp"
               android:layout_marginEnd="10dp"
               android:layout_gravity="center"/>
 
           <RadioButton
+              android:id="@+id/radio_female"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:text="@string/female"
@@ -305,6 +310,31 @@
 
       </android.support.design.widget.TextInputLayout>
 
+      <android.support.design.widget.TextInputLayout
+          android:id="@+id/signUp_doctor_expertise"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="@dimen/margin_start_end"
+          android:layout_marginStart="30dp"
+          android:layout_marginTop="18dp"
+          style="@style/EditTextHint"
+          android:visibility="gone"
+          app:backgroundTint="@color/dark_white"
+          app:hintTextAppearance="@style/TextAppearance.App.TextInputLayout"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/signUp_doctor_ID">
+
+          <android.support.design.widget.TextInputEditText
+              android:id="@+id/signUp_edit_doctor_expertise"
+              android:layout_width="260dp"
+              android:layout_height="wrap_content"
+              android:textColor="@color/dark_white"
+              android:textColorHint="@color/dark_white"
+              android:hint="Doctor Expertise"/>
+
+      </android.support.design.widget.TextInputLayout>
+
 
       <android.support.v7.widget.CardView
           android:id="@+id/signUp_card"
@@ -313,7 +343,7 @@
           app:cardCornerRadius="3dp"
           android:layout_marginTop="30dp"
           android:elevation="@dimen/elevation_corner"
-          app:layout_constraintTop_toBottomOf="@id/signUp_doctor_ID"
+          app:layout_constraintTop_toBottomOf="@id/signUp_doctor_expertise"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintEnd_toEndOf="parent">
 
@@ -321,7 +351,7 @@
           android:id="@+id/create_new_account"
           android:layout_width="match_parent"
           android:layout_height="match_parent"
-          android:text="@string/createAccount"
+          android:text="Next"
           android:textColor="@color/white"
           android:background="@drawable/btn_back"
          />

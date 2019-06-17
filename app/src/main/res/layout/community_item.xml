@@ -55,14 +55,13 @@
             android:layout_height="wrap_content"
             android:text="descreption of this comunity or just a breif"
             android:textColor="@color/lightblack"
-            android:textSize="15sp"
+            android:textSize="12sp"
             android:lines="3"
             android:inputType="textMultiLine"
             app:layout_constraintTop_toBottomOf="@id/community_name"
             app:layout_constraintStart_toStartOf="@id/community_name"
             android:layout_marginBottom="5dp"
             android:layout_marginTop="5dp"
-            android:layout_marginStart="10dp"
             android:layout_marginEnd="35dp"
             />
     </android.support.constraint.ConstraintLayout>

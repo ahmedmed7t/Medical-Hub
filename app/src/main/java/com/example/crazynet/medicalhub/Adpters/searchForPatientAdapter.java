@@ -73,6 +73,10 @@ public class searchForPatientAdapter extends RecyclerView.Adapter<searchForPatie
                 intent.putExtra("n_id",arrayList.get(position).getN_id());
                 intent.putExtra("age",arrayList.get(position).getAge());
                 intent.putExtra("gender",arrayList.get(position).getGender());
+                intent.putExtra("hight",arrayList.get(position).getHight());
+                intent.putExtra("weight",arrayList.get(position).getWeight());
+                intent.putExtra("blood",arrayList.get(position).getBlood());
+                intent.putExtra("bio",arrayList.get(position).getBio());
                 context.startActivity(intent);
             }
         });

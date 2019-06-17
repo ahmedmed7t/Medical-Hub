@@ -54,11 +54,13 @@
         <activity
             android:name=".AddPostActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity android:name=".PatientForDaoctorActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
-
-        <activity android:name=".AddHistoryActivity"
+        <activity
+            android:name=".PatientForDaoctorActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddHistoryActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".cont_signActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 

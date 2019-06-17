@@ -18,6 +18,7 @@ import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.crazynet.medicalhub.Adpters.AnswerdQustionsAdapter;
 import com.example.crazynet.medicalhub.Model.AnsweredQuestion;
 
@@ -26,6 +27,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class doctorForPatientActivity extends AppCompatActivity {
 
@@ -38,6 +40,19 @@ public class doctorForPatientActivity extends AppCompatActivity {
     @BindView(R.id.doctor_f_patient_recycler)
     RecyclerView recyclerView;
 
+    @BindView(R.id.doctor_f_patient_adress)
+    TextView address;
+
+    @BindView(R.id.doctor_f_patient_phone)
+    TextView phone;
+
+    @BindView(R.id.doctor_f_patient_specialist)
+    TextView spect;
+
+    @BindView(R.id.doctor_f_patient_image)
+    CircleImageView circleImageView;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +62,12 @@ public class doctorForPatientActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         doctorName.setText(intent.getStringExtra("doctor_name"));
+        address.setText(intent.getStringExtra("doctor_address"));
+        phone.setText(intent.getStringExtra("doctor_phone"));
+        spect.setText(intent.getStringExtra("doctor_exper"));
+        Glide.with(this).load(intent.getStringExtra("doctor_image")).into(circleImageView);
+        ratingBar.setRating(intent.getFloatExtra("doctor_rate",(float)0));
+
 
         Drawable drawable = ratingBar.getProgressDrawable();
         drawable.setColorFilter(Color.parseColor("#ffd91d"), PorterDuff.Mode.SRC_ATOP);
@@ -55,16 +76,14 @@ public class doctorForPatientActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         ArrayList<AnsweredQuestion> answeredQuestionns = new ArrayList<>();
-        answeredQuestionns.add(new AnsweredQuestion("question ","answer"));
-        answeredQuestionns.add(new AnsweredQuestion("question ","answer"));
-        answeredQuestionns.add(new AnsweredQuestion("question ","answer"));
-        answeredQuestionns.add(new AnsweredQuestion("question ","answer"));
-        answeredQuestionns.add(new AnsweredQuestion("question ","answer"));
-        answeredQuestionns.add(new AnsweredQuestion("question ","answer"));
-        answeredQuestionns.add(new AnsweredQuestion("question ","answer"));
-        answeredQuestionns.add(new AnsweredQuestion("question ","answer"));
-        answeredQuestionns.add(new AnsweredQuestion("question ","answer"));
-        answeredQuestionns.add(new AnsweredQuestion("question ","answer"));
+        answeredQuestionns.add(new AnsweredQuestion("sem quam semper libero ? ","Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec"));
+        answeredQuestionns.add(new AnsweredQuestion("consequat vitae, eleifend ac enim ? ","viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue."));
+        answeredQuestionns.add(new AnsweredQuestion("Etiam ultricies nisi vel augue ? ","sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante"));
+        answeredQuestionns.add(new AnsweredQuestion("Maecenas tempus, tellus eget condimentum rhoncus ? ","vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt"));
+        answeredQuestionns.add(new AnsweredQuestion("Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem ?","Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec"));
+        answeredQuestionns.add(new AnsweredQuestion("Maecenas nec odio et ante tincidunt tempus ?","viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue."));
+        answeredQuestionns.add(new AnsweredQuestion("Donec sodales sagittis magna Sed consequat ?","sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante"));
+        answeredQuestionns.add(new AnsweredQuestion(" Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus ?","Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec"));
 
 
         recyclerView.setAdapter(new AnswerdQustionsAdapter(answeredQuestionns,this));

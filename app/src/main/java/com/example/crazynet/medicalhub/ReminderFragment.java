@@ -83,10 +83,9 @@ public class ReminderFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
 
 
-        reminders.add(new Reminder("name of med","5:30"));
-        reminders.add(new Reminder("name of med","2:30"));
-        reminders.add(new Reminder("name of med","5:50"));
-        reminders.add(new Reminder("name of med","7:10"));
+        reminders.add(new Reminder("novalgene","5:30"));
+        reminders.add(new Reminder("Panadol","2:30"));
+
 
         recyclerView.setAdapter(new ReminderAdapter(this.getContext(),reminders));
 

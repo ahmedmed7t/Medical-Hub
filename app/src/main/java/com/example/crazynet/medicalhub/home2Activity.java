@@ -28,6 +28,15 @@ import butterknife.ButterKnife;
 public class home2Activity extends AppCompatActivity {
 
     String who;
+    public static boolean is_doctor = false;
+    public static String name = "Medhat";
+    public static String u_address = "Minya";
+    public static String u_id = "12345678912345";
+    public static String u_age = "25";
+    public static String u_phone = "01234567891";
+    public static String u_gender = "1";
+    public static String u_bio = "";
+    public static String u_expertise = "";
 
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -86,9 +95,10 @@ public class home2Activity extends AppCompatActivity {
 
         if(who.equals("p")||who.equals("P"))
             navigation.inflateMenu(R.menu.navigation);
-        else if(who.equals("d")||who.equals("D"))
+        else if(who.equals("d")||who.equals("D")) {
             navigation.inflateMenu(R.menu.patient_navigation);
-        else
+            is_doctor = true ;
+        } else
             navigation.inflateMenu(R.menu.navigation);
 
 
@@ -96,6 +106,39 @@ public class home2Activity extends AppCompatActivity {
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.main_frgment, new homeFragment());
         fragmentTransaction.commit();
+
+        String userName, address, phone,age , id , is_male , bio , expertise ;
+
+        if(!is_doctor) {
+            SharedPreferences sharedPreferences = getSharedPreferences("user", MODE_PRIVATE);
+             userName = sharedPreferences.getString("full_name", "");
+             address = sharedPreferences.getString("address", "");
+             phone = sharedPreferences.getString("phone", "");
+             age = sharedPreferences.getString("age", "");
+             id = sharedPreferences.getString("n_id", "");
+             is_male = sharedPreferences.getString("is_male", "");
+             bio = sharedPreferences.getString("bio", "");
+             expertise = sharedPreferences.getString("expertise", "");
+
+        }else{
+            SharedPreferences sharedPreferences = getSharedPreferences("doctor", MODE_PRIVATE);
+             userName = sharedPreferences.getString("d_full_name", "");
+             address = sharedPreferences.getString("d_address", "");
+             phone = sharedPreferences.getString("d_phone", "");
+             age = sharedPreferences.getString("d_age", "");
+             id = sharedPreferences.getString("d_n_id", "");
+             is_male = sharedPreferences.getString("d_is_male", "");
+             bio = sharedPreferences.getString("d_bio", "");
+             expertise = sharedPreferences.getString("d_expertise", "");
+        }
+        if(!address.equals("")){ u_address = address; }
+        if(!phone.equals("")){ u_phone = phone; }
+        if(!userName.equals("")){ name = userName; }
+        if(!age.equals("")){ u_age = age; }
+        if(!id.equals("")){ u_id = id; }
+        if(!is_male.equals("")){ u_gender = is_male ;}
+        if(!bio.equals("")){u_bio = bio;}
+        if(!expertise.equals("")){u_expertise = expertise;}
 
     }
 

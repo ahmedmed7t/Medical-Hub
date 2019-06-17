@@ -11,16 +11,35 @@ public class PostTest {
     private String date ;
     private String content;
     private Boolean isDoctor;
+    private int likes;
+    private String comm;
 
-    public PostTest(String image, String name, String date, String content, Boolean isDoctor) {
+    public String getComm() {
+        return comm;
+    }
+
+    public void setComm(String comm) {
+        this.comm = comm;
+    }
+
+    public PostTest(String image, String name, String date, String content, Boolean isDoctor, int likes) {
         Image = image;
         this.name = name;
         this.date = date;
         this.content = content;
         this.isDoctor = isDoctor;
+        this.likes = likes;
     }
 
     public PostTest() {
+    }
+
+    public int getLikes() {
+        return likes;
+    }
+
+    public void setLikes(int likes) {
+        this.likes = likes;
     }
 
     public String getImage() {

@@ -13,7 +13,7 @@ import com.example.crazynet.medicalhub.MainActivity;
 import com.example.crazynet.medicalhub.R;
 
 /**
- * Created by CrazyNet on 11/06/2019.
+ * Created by Medhat on 11/06/2019.
  */
 
 public class NotificationHelper {

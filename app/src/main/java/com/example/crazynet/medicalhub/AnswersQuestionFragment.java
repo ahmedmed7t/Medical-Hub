@@ -26,21 +26,16 @@ public class AnswersQuestionFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    RecyclerView recyclerView;
+     RecyclerView recyclerView;
+     ArrayList<AnsweredQuestion> answeredQuestionns;
+     static ArrayList<AnsweredQuestion> addedQuestions = new ArrayList<>();
+     static int counter = 0 ;
 
     public AnswersQuestionFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AnswersQuestionFragment.
-     */
-    // TODO: Rename and change types and number of parameters
+
     public static AnswersQuestionFragment newInstance(String param1, String param2) {
         AnswersQuestionFragment fragment = new AnswersQuestionFragment();
         Bundle args = new Bundle();
@@ -70,17 +65,16 @@ public class AnswersQuestionFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        ArrayList<AnsweredQuestion> answeredQuestionns = new ArrayList<>();
-        answeredQuestionns.add(new AnsweredQuestion("question ","answer"));
-        answeredQuestionns.add(new AnsweredQuestion("question ","answer"));
-        answeredQuestionns.add(new AnsweredQuestion("question ","answer"));
-        answeredQuestionns.add(new AnsweredQuestion("question ","answer"));
-        answeredQuestionns.add(new AnsweredQuestion("question ","answer"));
-        answeredQuestionns.add(new AnsweredQuestion("question ","answer"));
-        answeredQuestionns.add(new AnsweredQuestion("question ","answer"));
-        answeredQuestionns.add(new AnsweredQuestion("question ","answer"));
-        answeredQuestionns.add(new AnsweredQuestion("question ","answer"));
-        answeredQuestionns.add(new AnsweredQuestion("question ","answer"));
+        answeredQuestionns = new ArrayList<>();
+        answeredQuestionns.add(new AnsweredQuestion("sem quam semper libero ? ","Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec"));
+        answeredQuestionns.add(new AnsweredQuestion("consequat vitae, eleifend ac enim ? ","viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue."));
+        answeredQuestionns.add(new AnsweredQuestion("Etiam ultricies nisi vel augue ? ","sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante"));
+        answeredQuestionns.add(new AnsweredQuestion("Maecenas tempus, tellus eget condimentum rhoncus ? ","vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt"));
+        answeredQuestionns.add(new AnsweredQuestion("Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem ?","Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec"));
+        answeredQuestionns.add(new AnsweredQuestion("Maecenas nec odio et ante tincidunt tempus ?","viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue."));
+        answeredQuestionns.add(new AnsweredQuestion("Donec sodales sagittis magna Sed consequat ?","sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante"));
+        answeredQuestionns.add(new AnsweredQuestion(" Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus ?","Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec"));
+
 
 
         recyclerView.setAdapter(new AnswerdQustionsAdapter(answeredQuestionns,getContext()));
@@ -89,4 +83,26 @@ public class AnswersQuestionFragment extends Fragment {
         return view;
     }
 
+    public void addQuestion(AnsweredQuestion answeredQuestion){
+        addedQuestions.add(0,answeredQuestion);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        for(int i=0 ; i<addedQuestions.size();i++){
+            answeredQuestionns.add(0,addedQuestions.get(i));
+        }
+        recyclerView.setAdapter(new AnswerdQustionsAdapter(answeredQuestionns,getContext()));
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        int size = counter;
+        for(int i =0 ; i<size;i++){
+            answeredQuestionns.remove(0);
+            counter--;
+        }
+    }
 }

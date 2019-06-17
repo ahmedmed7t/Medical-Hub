@@ -4,6 +4,7 @@ import android.Manifest;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.PorterDuff;
 import android.net.Uri;
@@ -29,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.username)
     TextInputEditText userName;
+
+    @BindView(R.id.password)
+    TextInputEditText password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +66,33 @@ public class MainActivity extends AppCompatActivity {
     @OnClick(R.id.button_login)
     void login(){
         Intent intent = new Intent(this,home2Activity.class);
-        intent.putExtra("who",userName.getText().toString());
-        startActivity(intent);
+
+        if(userName.getText().toString().equals("p") || userName.getText().toString().equals("P")||
+        userName.getText().toString().equals("D")|| userName.getText().toString().equals("d")) {
+            intent.putExtra("who",userName.getText().toString());
+            startActivity(intent);
+        }else if (userName.getText().toString().equals("") && password.getText().toString().equals("")){
+            Toast.makeText(this,"enter username and password",Toast.LENGTH_LONG).show();
+        }
+        else{
+            SharedPreferences sharedPreferences = getSharedPreferences("user",MODE_PRIVATE);
+            String m_mail =sharedPreferences.getString("s_mail","");
+            String m_password = sharedPreferences.getString("s_password","");
+            if(password.getText().toString().equals(m_password) && userName.getText().toString().equals(m_mail)){
+                intent.putExtra("who","p");
+                startActivity(intent);
+            }else{
+                SharedPreferences sharedPreferences1 = getSharedPreferences("doctor",MODE_PRIVATE);
+                String m_mail1 =sharedPreferences1.getString("d_s_mail","");
+                String m_password1 = sharedPreferences1.getString("d_s_password","");
+                if(password.getText().toString().equals(m_password1) && userName.getText().toString().equals(m_mail1)){
+                    intent.putExtra("who","d");
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(this,"enter valid username or password",Toast.LENGTH_LONG).show();
+                }
+            }
+        }
     }
 
     private String getCalendarUriBase(boolean eventUri) {

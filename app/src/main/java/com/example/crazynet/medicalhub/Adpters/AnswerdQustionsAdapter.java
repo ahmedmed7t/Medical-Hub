@@ -65,7 +65,7 @@ public class AnswerdQustionsAdapter extends RecyclerView.Adapter<AnswerdQustions
     public void onBindViewHolder(@NonNull final AnswerdQustionsAdapter.ViewHolder holder, final int position) {
 
         holder.answer.setText(arrayList.get(position).getAnswer());
-        holder.question.setText(arrayList.get(position).getQuestion()+" ?");
+        holder.question.setText(arrayList.get(position).getQuestion());
 
     }
 

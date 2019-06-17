@@ -13,13 +13,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.crazynet.medicalhub.AnswersQuestionFragment;
+import com.example.crazynet.medicalhub.Model.AnsweredQuestion;
+import com.example.crazynet.medicalhub.NotAnsweredQuestionFragment;
 import com.example.crazynet.medicalhub.R;
 
 import java.util.ArrayList;
 
 /**
- * Created by CrazyNet on 13/06/2019.
+ * Created by Medhat on 13/06/2019.
  */
 
 public class questionAdapter extends RecyclerView.Adapter<questionAdapter.ViewHolder> {
@@ -31,6 +35,7 @@ public class questionAdapter extends RecyclerView.Adapter<questionAdapter.ViewHo
     public questionAdapter(ArrayList<String> arrayList, Context context) {
         this.arrayList = arrayList;
         this.context = context;
+        notifyDataSetChanged();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -53,15 +58,16 @@ public class questionAdapter extends RecyclerView.Adapter<questionAdapter.ViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         holder.question.setText(arrayList.get(position));
         holder.answer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 final String[] m_Text = new String[1];
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
-                builder.setTitle("Ask a question");
+                builder.setTitle("Answer this question");
 
                 LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.WRAP_CONTENT);
                 lp.setMargins(10, 10, 10, 10);
@@ -75,6 +81,16 @@ public class questionAdapter extends RecyclerView.Adapter<questionAdapter.ViewHo
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         m_Text[0] = input.getText().toString();
+                        String question = arrayList.get(position);
+                        String answer = m_Text[0];
+
+                        AnswersQuestionFragment fragment = new AnswersQuestionFragment();
+                        fragment.addQuestion(new AnsweredQuestion(question,answer));
+                        Toast.makeText(context,"Question Answered ",Toast.LENGTH_LONG).show();
+                        NotAnsweredQuestionFragment.positions.add(position);
+
+                        arrayList.remove(position);
+                        notifyDataSetChanged();
                     }
                 });
                 builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

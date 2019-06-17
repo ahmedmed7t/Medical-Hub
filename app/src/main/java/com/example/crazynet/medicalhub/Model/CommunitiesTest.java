@@ -8,6 +8,15 @@ public class CommunitiesTest {
 
     private String img;
     private String name;
+    private String descreption;
+
+    public String getDescreption() {
+        return descreption;
+    }
+
+    public void setDescreption(String descreption) {
+        this.descreption = descreption;
+    }
 
     public String getImg() {
         return img;
@@ -25,9 +34,10 @@ public class CommunitiesTest {
         this.name = name;
     }
 
-    public CommunitiesTest(String img, String name) {
+    public CommunitiesTest(String img, String name, String desc) {
 
         this.img = img;
         this.name = name;
+        this.descreption = desc;
     }
 }

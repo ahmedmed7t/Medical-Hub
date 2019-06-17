@@ -169,7 +169,7 @@
             android:lines="4"
             android:enabled="false"
             android:gravity="top"
-            android:text="blablablablablablablablablablablablablablablablablablablablablablablablablabla"
+            android:text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec,"
             android:textColor="@color/black"
             android:padding="5dp"/>
 

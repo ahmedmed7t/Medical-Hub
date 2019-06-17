@@ -1,6 +1,7 @@
 package com.example.crazynet.medicalhub;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -23,7 +24,7 @@ public class DoctorProfileFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    TextView ans , notAns , bio , phone , address ;
+    TextView ans , notAns , bio , phone , address , expertise , name;
     EditText e_bio , e_phone , e_addrss ;
 
     public DoctorProfileFragment() {
@@ -62,42 +63,65 @@ public class DoctorProfileFragment extends Fragment {
         e_addrss = view.findViewById(R.id.doctor_adress);
         e_phone = view.findViewById(R.id.doctor_phone);
 
+        expertise = view.findViewById(R.id.doctor_specialist);
+        name = view.findViewById(R.id.doctor_name);
+
+        name.setText(home2Activity.name);
+        expertise.setText(home2Activity.u_expertise);
+        e_bio.setText(home2Activity.u_bio);
+        e_phone.setText(home2Activity.u_phone);
+        e_addrss.setText(home2Activity.u_address);
+
         bio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences preferences = getActivity().getSharedPreferences("doctor", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+
                 if(bio.getText().equals("Edit Bio")){
                     e_bio.setEnabled(true);
                     bio.setText("Save Bio");
+                    editor.putString("d_bio",e_bio.getText().toString());
                 }else{
                     e_bio.setEnabled(false);
                     bio.setText("Edit Bio");
                 }
+                editor.apply();
             }
         });
 
         address.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences preferences = getActivity().getSharedPreferences("doctor", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
+
                 if(address.getText().equals("Edit Address")){
                     e_addrss.setEnabled(true);
                     address.setText("Save Address");
+                    editor.putString("d_address", e_addrss.getText().toString());
                 }else{
                     e_addrss.setEnabled(false);
                     address.setText("Edit Address");
                 }
+                editor.apply();
             }
         });
 
         phone.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SharedPreferences preferences = getActivity().getSharedPreferences("doctor", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = preferences.edit();
                 if(phone.getText().equals("Edit Phone")){
                     e_phone.setEnabled(true);
                     phone.setText("Save Phone");
+                    editor.putString("d_phone", e_phone.getText().toString());
                 }else{
                     e_phone.setEnabled(false);
                     phone.setText("Edit Phone");
                 }
+                editor.apply();
             }
         });
 

@@ -11,16 +11,18 @@ public class SearchTest {
     private float rate;
     private String place;
     private String expertise;
+    private String phone;
 
     public SearchTest() {
     }
 
-    public SearchTest(String image, String name, float rate, String place, String expertise) {
+    public SearchTest( String phone ,String image, String name, float rate, String place, String expertise) {
         this.image = image;
         this.name = name;
         this.rate = rate;
         this.place = place;
         this.expertise = expertise;
+        this.phone = phone;
     }
 
     public String getExpertise() {
@@ -61,5 +63,13 @@ public class SearchTest {
 
     public void setPlace(String place) {
         this.place = place;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }
